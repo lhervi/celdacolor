@@ -1,0 +1,34 @@
+      
+{
+    "tipoMetrica1" : 
+    [
+        {"style": "green", "background-color": "#27AE60", "color": "blanco", "valor": "#FFFFFF", "desde" : 70, "hasta" : 100},
+        {"style" : "yellow", "background-color": "#FFFF00", "color": "blanco", "valor": "#FFFFFF", "desde" : 40, "hasta" : 69},
+        {"style" : "red", "background-color" : "#FF0033", "color": "blanco", "valor": "#FFFFFF", "desde" : 0, "hasta" : 39}
+    ],
+    
+    "tipoMetrica2" : 
+    [
+        {"style": "white", "background-color": "#ffffff", "color": "negro", "valor": "#000000", "desde" : 50, "hasta" : 100},
+        {"style" : "black", "background-color": "#000000", "color": "blanco", "valor": "#FFFFFF", "desde" : 0, "hasta" : 49}        
+    ],
+    
+    "tipoMetrica3" : 
+    [
+        {"style": "white", "background-color": "#ffffff", "color": "negro", "valor": "#000000", "desde" : 91, "hasta" : 100},
+        {"style" : "black", "background-color": "#000000", "color": "blanco", "valor": "#FFFFFF", "desde" : 61, "hasta" : 90},
+        {"style" : "black", "background-color": "#000000", "color": "blanco", "valor": "#FFFFFF", "desde" : 0, "hasta" : 60}
+    ],
+    "tipoMetrica4" : 
+    [
+        {"style": "white", "background-color": "#ffffff", "color": "negro", "valor": "#000000", "desde" : 91, "hasta" : 100},
+        {"style" : "black", "background-color": "#000000", "color": "blanco", "valor": "#FFFFFF", "desde" : 61, "hasta" : 90},
+        {"style" : "black", "background-color": "#000000", "color": "blanco", "valor": "#FFFFFF", "desde" : 0, "hasta" : 60}
+    ],
+    "tipoMetrica5" : 
+    [
+        {"style": "white", "background-color": "#ffffff", "color": "negro", "valor": "#000000", "desde" : 91, "hasta" : 100},
+        {"style" : "black", "background-color": "#000000", "color": "blanco", "valor": "#FFFFFF", "desde" : 61, "hasta" : 90},
+        {"style" : "black", "background-color": "#000000", "color": "blanco", "valor": "#FFFFFF", "desde" : 0, "hasta" : 60}
+    ]    
+}
