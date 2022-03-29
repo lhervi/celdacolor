@@ -46,13 +46,7 @@
         </style>
         
     </head>    
-    <body>
-        <form id="formaMetrica" action="classCeldaColor.php" method="POST">           
-
-            <div>
-                <input type="submit">
-            </div>
-        </form>
+    <body>      
 
         <table id="tablaMetrica" class="table2excel colorClass">
             <th colspan="3">Tabla de ejemplo</th>
