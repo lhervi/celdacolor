@@ -47,12 +47,7 @@
         
     </head>    
     <body>
-        <form id="formaMetrica" action="classCeldaColor.php" method="POST">
-            <div>
-                <input type="text" val ="0" name="cel1">
-                <input type="text" val ="0" name="cel2">
-                <input type="text" val ="0" name="cel3">
-            </div>
+        <form id="formaMetrica" action="classCeldaColor.php" method="POST">           
 
             <div>
                 <input type="submit">
