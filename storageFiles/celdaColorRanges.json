@@ -1,0 +1,116 @@
+[
+    {
+        "rangesName": "semaforo", 
+        "fecha_creacion":"2/9/2024",
+        "createdBy": "Lornis",
+        "ranges" : [
+            {
+                "left":0,
+                "right":10,
+                "leftOpen":false,
+                "rightOpen":true,
+                "colorName":"blanco",
+                "color":"#ffffff",
+                "backgroundColorName":"rojo",
+                "backgroundColor":"#FF0000"
+            },
+            {
+                "left":10,
+                "right":15,
+                "leftOpen":false,
+                "rightOpen":true,
+                "colorName":"negro",
+                "color":"#000000",
+                "backgroundColorName":"amarillo",
+                "backgroundColor":"#ffff00"
+            },
+            {
+                "left":15,
+                "right":20,
+                "leftOpen":false,
+                "rightOpen":false,
+                "colorName":"blanco",
+                "color":"#ffffff",
+                "backgroundColorName":"verde",
+                "backgroundColor":"#00FF00"
+            }
+        ]
+
+    },
+    {
+        "rangesName": "semaforo1", 
+        "fecha_creacion":"2/9/2024",
+        "createdBy": "Lornis",
+        "ranges" : [
+            {
+                "left":0,
+                "right":30,
+                "leftOpen":false,
+                "rightOpen":true,
+                "colorName":"blanco",
+                "color":"#ffffff",
+                "backgroundColorName":"gris",
+                "backgroundColor":"#aab7b8"
+            },
+            {
+                "left":30,
+                "right":65,
+                "leftOpen":false,
+                "rightOpen":true,
+                "colorName":"negro",
+                "color":"#000000",
+                "backgroundColorName":"naranja",
+                "backgroundColor":"#e67e22"
+            },
+            {
+                "left":65,
+                "right":100,
+                "leftOpen":false,
+                "rightOpen":false,
+                "colorName":"blanco",
+                "color":"#ffffff",
+                "backgroundColorName":"azul",
+                "backgroundColor":"#3498db"
+            }
+        ]
+
+    },
+    {
+        "rangesName": "semaforo2", 
+        "fecha_creacion":"2/9/2024",
+        "createdBy": "Lornis",
+        "ranges" : [
+            {
+                "left":0,
+                "right":30,
+                "leftOpen":false,
+                "rightOpen":true,
+                "colorName":"blanco",
+                "color":"#ffffff",
+                "backgroundColorName":"gris",
+                "backgroundColor":"#aab7b8"
+            },
+            {
+                "left":30,
+                "right":65,
+                "leftOpen":false,
+                "rightOpen":true,
+                "colorName":"negro",
+                "color":"#000000",
+                "backgroundColorName":"naranja",
+                "backgroundColor":"#e67e22"
+            },
+            {
+                "left":65,
+                "right":100,
+                "leftOpen":false,
+                "rightOpen":false,
+                "colorName":"blanco",
+                "color":"#ffffff",
+                "backgroundColorName":"azul",
+                "backgroundColor":"#3498db"
+            }
+        ]
+
+    }
+]

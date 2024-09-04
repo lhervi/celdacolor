@@ -1,0 +1,21 @@
+
+
+.tableEjemplo {
+    margin-left: 25px;
+    margin-top: 30px;
+}
+
+.table2excel td {
+    width: 30px;
+    height: 30px;
+    padding: 3px;    
+    text-align: center;
+}
+
+.tituloTabla{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:normal;
+    font-size:xx-large;
+    padding: 15px;
+}
+ 

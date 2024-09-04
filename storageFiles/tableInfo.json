@@ -1,0 +1,8 @@
+{
+    "id":"tableId1",
+    "class": "table2excel colorClass",
+    "filas": 20,
+    "columnas": 10,
+    "valorMenor":0,
+    "valorMayor":100
+}
