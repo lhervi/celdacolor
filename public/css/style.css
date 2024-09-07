@@ -2,7 +2,7 @@
 
 .tableEjemplo {
     margin-left: 25px;
-    margin-top: 30px;
+    margin-top: 30px;    
 }
 
 .table2excel td {
@@ -18,4 +18,53 @@
     font-size:xx-large;
     padding: 15px;
 }
- 
+
+.forma{    
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 60px;
+}
+
+.forma table {    
+    border-collapse: collapse;
+    
+    width: 80%;
+}
+
+.forma th, .forma td{
+    border: 1px solid lightgray;
+    padding: 8px;
+    text-align: center;
+}
+
+.adminRango table{
+    border: 1px solid lightgrey;
+    border-collapse: collapse;
+}
+
+.edit:hover {
+    background-color: rgb(150, 187, 255);
+}
+.add:hover {
+    background-color: rgb(140, 149, 244);
+}
+.delete:hover {
+    background-color: rgb(38, 30, 80);
+    color:darkgrey
+}
+
+.edit {
+    background-color: rgb(244, 244, 244);
+}
+.add {
+    background-color: rgb(244, 244, 244);
+}
+.delete {
+    background-color: rgb(244, 244, 244);    
+}
+
+.clickable{
+    cursor:pointer;
+    color: rgb(7, 93, 186);
+    font-size:larger;
+    font-weight: 600;
+}

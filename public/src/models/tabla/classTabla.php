@@ -57,9 +57,7 @@ class Tabla {
     }
 
     public function getTable():string {
-        //$objRango = new Rangos();
-        //$rangosInfo = $objRango->getRangeByName($this->rangesName);
-
+        
         $table = "<table id='$this->id' class='$this->class'>\n";       
         $table = $table . "<thead>\n" ;
         $table = $table . "<th colspan='$this->columnas' class='tituloTabla'>Tabla de ejemplo</th>\n";

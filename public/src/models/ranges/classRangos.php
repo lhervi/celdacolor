@@ -5,14 +5,12 @@ include_once (__DIR__ . "./../../../../config/constantes.php");
 class Rangos{
 
     private array $ranges;
-    private array $indicesRangos;
-    private string $rangesName;
-    private string $fechaCreacion;
-    private string $createdBy;
+    private array $indicesRangos;    
     
     
     public function __construct(?array $ranges=null)
-    {
+    {        
+        
         if(isset($ranges)){
             $this->ranges = $ranges;
         }else{
@@ -84,23 +82,34 @@ class Rangos{
         return $this->getRangeByIndice($pos);
     }
 
+    function getRangosOptions(): string{
+        $htmlRangoOpiones="";
+        foreach($this->indicesRangos as $ind=>$rangoName){
+            $htmlRangoOpiones = $htmlRangoOpiones . "<option value=$rangoName>$rangoName</option> \n";
+        }
+        return $htmlRangoOpiones;
+    }
+
+
 }
 
-/*
+
     //------ Solo para pruebas de esta clase
 
-    $objRangos = new Rangos();
-    $rangosArray = $objRangos->getRangos();
-    //$rangosIndices = $objRangos->getRangosIndices();
-    $range1 = $objRangos->getRangeByIndice(1);
-    $range2 = $objRangos->getRangeIndiceNumber('semaforo2');
-    $range3 = $objRangos->getRangeByName('semaforo2');
-    //$rangosJson = $objRangos->getRangosJson();
+    /*
 
-    $a=5;
-    
-*/
+        $objRangos = new Rangos();
+        $opt = $objRangos->getRangosOptions();
 
+        //$rangosArray = $objRangos->getRangos();
+        //$rangosIndices = $objRangos->getRangosIndices();
+        //$range1 = $objRangos->getRangeByIndice(1);
+        //$range2 = $objRangos->getRangeIndiceNumber('semaforo2');
+        //$range3 = $objRangos->getRangeByName('semaforo2');
+        //$rangosJson = $objRangos->getRangosJson();
 
+        $a=5;
+
+    */
 
 ?>

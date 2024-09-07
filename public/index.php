@@ -22,17 +22,46 @@
             include_once "./../config/constantes.php";
             include_once "./src/models/tabla/classTabla.php";
 
-            $tablaParam = ["rangesName"=>"semaforo", "valorMenor"=>0, "valorMayor"=>20, "filas"=>10, "columnas"=>20];
+            
+            $rangoSeleccionado = RANGO_DEFAULT;
+
+            if (isset($_POST['rangosList'])){
+                $rangoSeleccionado = $_POST['rangosList'];
+            }
+            
+
+            $tablaParam = ["rangesName"=>$rangoSeleccionado, "valorMenor"=>0, "valorMayor"=>100, "filas"=>5, "columnas"=>20];
             $objTable = new Tabla($tablaParam);
+
+            $objRangos = new Rangos();
             
             echo $objTable->getTable();
+
+            echo "<p><strong>semáforo activo: </strong> $rangoSeleccionado<p>";
 
             echo "<br/><br/>";           
             
         ?>
-        
+
         <button id="btnExport">Exportar a Excel</button>
+        <br/><br/>
+        <div class="forma">
+            <form action="index.php" method="POST" >
+                <label for="rangosList" >Elije un conjunto de Rangos</label>
+                <select id="rangosList" name="rangosList">
+                    <?php echo $objRangos->getRangosOptions() ?>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+            <br/><br/>
+            <a href="./src/views/adminRangos.php">Aministrar Rangos</a>
+        </div>
+
     </div>
+
+    
+
+
         
         
         <script>

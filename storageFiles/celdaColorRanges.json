@@ -1,12 +1,12 @@
 [
     {
         "rangesName": "semaforo", 
-        "fecha_creacion":"2/9/2024",
+        "fechaCreacion":"2/9/2024",
         "createdBy": "Lornis",
         "ranges" : [
             {
                 "left":0,
-                "right":10,
+                "right":35,
                 "leftOpen":false,
                 "rightOpen":true,
                 "colorName":"blanco",
@@ -15,8 +15,8 @@
                 "backgroundColor":"#FF0000"
             },
             {
-                "left":10,
-                "right":15,
+                "left":35,
+                "right":65,
                 "leftOpen":false,
                 "rightOpen":true,
                 "colorName":"negro",
@@ -25,8 +25,8 @@
                 "backgroundColor":"#ffff00"
             },
             {
-                "left":15,
-                "right":20,
+                "left":65,
+                "right":100,
                 "leftOpen":false,
                 "rightOpen":false,
                 "colorName":"blanco",
@@ -39,7 +39,7 @@
     },
     {
         "rangesName": "semaforo1", 
-        "fecha_creacion":"2/9/2024",
+        "fechaCreacion":"2/9/2024",
         "createdBy": "Lornis",
         "ranges" : [
             {
@@ -77,7 +77,7 @@
     },
     {
         "rangesName": "semaforo2", 
-        "fecha_creacion":"2/9/2024",
+        "fechaCreacion":"2/9/2024",
         "createdBy": "Lornis",
         "ranges" : [
             {
@@ -112,5 +112,32 @@
             }
         ]
 
+    },
+    {
+        "rangesName": "semaforo4", 
+        "fechaCreacion":"2/9/2024",
+        "createdBy": "Merli",
+        "ranges" : [
+            {
+                "left":0,
+                "right":50,
+                "leftOpen":false,
+                "rightOpen":true,
+                "colorName":"blanco",
+                "color":"#ffffff",
+                "backgroundColorName":"negro",
+                "backgroundColor":"#000000"
+            },
+            {
+                "left":50,
+                "right":100,
+                "leftOpen":false,
+                "rightOpen":true,
+                "colorName":"negro",
+                "color":"#000000",
+                "backgroundColorName":"blanco",
+                "backgroundColor":"#ffffff"
+            }
+        ]
     }
 ]

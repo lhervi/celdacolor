@@ -16,6 +16,8 @@
         "valorMayor" => 100,
         "rangesName" => "semaforo"
     ];
+
+    const DEFAUL_NAME = "Anonymous";
     
     const PRUEBA = 5;
     const TABLA_FILAS = 20;
