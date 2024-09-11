@@ -68,3 +68,53 @@
     font-size:larger;
     font-weight: 600;
 }
+
+.rangosTitle{
+    font-size: larger;
+    color: blue;
+}
+
+.leyendas{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-right:40px;        
+}
+
+.leyenda {
+   
+    margin-left: 5px;
+    text-align:center;   
+    font-size:x-large; 
+    font-weight: 400;
+}
+
+.leyenda div {
+    width:100px;
+}
+
+.agregar{
+    font-size: larger;
+    color: blue;
+    margin-top: 5px;
+    cursor: pointer;
+    width: fit-content;
+    padding: 5px;
+}
+
+.agregar:hover{    
+    color:rgb(255, 255, 255);
+    background-color: blue;
+    
+}
+
+.papelera{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    width: 200px;
+}
+
+.papelera img{
+    width: 50px;
+}
