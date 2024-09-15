@@ -23,9 +23,8 @@
         const acciones = document.querySelectorAll('.accion');
         acciones.forEach((accion)=>{
             accion.addEventListener('click', menejarClick);
-        });
-            
-        }
+        });           
+        
 
     </script>
 

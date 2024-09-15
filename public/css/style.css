@@ -118,3 +118,19 @@
 .papelera img{
     width: 50px;
 }
+
+.fechaCreacion{
+    color:gray;
+    font-size: large;
+}
+
+.colorTexto {
+    background-color: #ffffff; /* Cambia por defecto al primer color */
+    color: #000000;
+}
+
+option::before {
+    content: "■"; /* Puedes reemplazar "■" por el carácter Unicode que hayas elegido */
+    font-size: 18px; /* Ajusta el tamaño del cuadrado */
+    margin-right: 5px;
+  }

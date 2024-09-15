@@ -1,0 +1,48 @@
+[
+  {"color": "Blanco", "codigo": "#FFFFFF"},
+  {"color": "Crema", "codigo": "#FFFDD0"},  
+  {"color": "Amarillo claro", "codigo": "#FFFFE0"},
+  {"color": "Amarillo", "codigo": "#FFFF00"},
+        
+  {"color": "Lavanda", "codigo": "#E6E6FA"},
+  {"color": "Gris claro", "codigo": "#D3D3D3"},
+
+  {"color": "Verde menta", "codigo": "#98FB98"},
+  {"color": "Verde claro", "codigo": "#90EE90"},  
+  {"color": "Verde oliva", "codigo": "#808000"},
+  {"color": "Verde bosque", "codigo": "#228B22"},
+  {"color": "Verde oscuro", "codigo": "#006400"},
+  
+  {"color": "Azul claro", "codigo": "#ADD8E6"},
+  {"color": "Azul cielo", "codigo": "#87CEEB"},
+  {"color": "Azul real", "codigo": "#4169E1"},
+  {"color": "Azul marino", "codigo": "#000080"},
+  {"color": "Azul noche", "codigo": "#191970"},
+
+  {"color": "Lila", "codigo": "#C8A2C8"},
+  {"color": "Violeta", "codigo": "#EE82EE"},
+  {"color": "Púrpura", "codigo": "#800080"},
+  {"color": "Morado oscuro", "codigo": "#4B0082"},
+
+  {"color": "Rosa pálido", "codigo": "#FFB6C1"},
+  {"color": "Rosa", "codigo": "#FFC0CB"},  
+  {"color": "Rojo claro", "codigo": "#F08080"},
+  {"color": "Rojo", "codigo": "#FF0000"},
+  {"color": "Rojo oscuro", "codigo": "#8B0000"},
+  
+  {"color": "Naranja claro", "codigo": "#FFDAB9"},
+  {"color": "Naranja", "codigo": "#FFA500"},
+  
+  {"color": "Dorado", "codigo": "#D4AF37"},
+  {"color": "Marrón rojizo", "codigo": "#B22222"},
+  {"color": "Marrón naranja", "codigo": "#CD853F"},
+  {"color": "Marrón claro", "codigo": "#B27D12"},
+  {"color": "Marrón", "codigo": "#A52A2A"},
+  {"color": "Marrón oscuro", "codigo": "#603311"},
+
+  {"color": "Gris claro", "codigo": "#D3D3D3"},
+  {"color": "Gris", "codigo": "#808080"},
+  {"color": "Gris oscuro", "codigo": "#696969"},  
+
+  {"color": "Negro", "codigo": "#000000"}
+]
