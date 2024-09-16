@@ -52,12 +52,12 @@
 
                     <div class="col-md-2">                            
                         <label for="left" class="form-label">Límite inferior</label>
-                        <input type="text" name="left" id="left" class="form-control">                            
+                        <input type="number" name="left" id="left" class="form-control" min="1" max="999" required>                            
                     </div>          
                     
                     <div class="col-md-2">
                         <label for="right" class="form-label">Límite superior</label>
-                        <input type="text" name="right" id="right" class="form-control">
+                        <input type="number" name="right" id="right" class="form-control" min="1" max="999" required>
                     </div>     
                     
                     <div class="col-md-2 form-check">                            
@@ -102,14 +102,21 @@
                     
                     <div class="col-md-2">                    
                         <label for="nuevoRango" class="form-label">Nuevo rango</label>
-                        <div class="leyenda" name="nuevoRango" id="nuevoRango" style="background-color:#000000; color:#ffffff; width: 80px;">[0, 10)</div>
+                        <div class="leyenda" name="nuevoRango" id="nuevoRango" style="background-color:#000000; color:#ffffff; width: 80px;"></div>
                         <div id="agregar" class="agregar"><span>Agregar +</span></div>
                         <!--input type="text" name="muestra" id="muestra" class="form-control"-->
                     </div>   
 
                 </div>  <!--fin de la primera fila de campos -->
 
-                <button type="submit" id="guardar" class="btn btn-primary">Guardar</button>
+                <button type="submit" id="guardar" class="btn btn-primary" disabled="true">Guardar</button>
+                <div class="errores" id="errores">
+
+                </div>
+                <div class="informar" id="informar">
+
+                </div>
+                
 
             </form><br>
         </div> <!-- fin de la clase formulario-->
@@ -143,7 +150,25 @@
     </div><!-- fin del contenedor-->
     <script>
 
-        
+        function ordenaRangos(){          
+
+            listaDeRangos.sort((a, b)=>{
+                return a.left - b.left
+            })
+            console.log(listaDeRangos);
+        }
+
+        function limpiar(){
+            left.value="";
+            right.value="";
+            nuevoRango.innerText =""
+        }
+
+        function limpiarErrores(){
+            const erroresDiv = document.getElementById('errores');
+            erroresDiv.innerHTML = "";
+        }
+
         function finArrastre(e){
             e.target.style.opacity='1'; //deprecated             
         }
@@ -212,9 +237,58 @@
             listaDeRangos.splice(idLeyenda, 1);
         }
 
-        function addNewRange(idLeyenda){
+        function yaExiste(contenido){
+            //Evaluar si ya hay un rango similar
+            existe = listaDeRangos.some(rango => rango.contenido === contenido);                            
+            return existe;
+        }
 
-            const rangoObj = getRangoObj();
+        function menorRepetido(menor){            
+            existe = listaDeRangos.some(rango=> rango.left === menor);
+            return existe;
+        }
+        function mayorRepetido(mayor){            
+            existe = listaDeRangos.some(rango=> rango.right === mayor);
+            return existe;
+        }
+        function coloresRepetidos(color, fondo){            
+            existeColor = listaDeRangos.some(rango=> rango.color === color);
+            existeFondo = listaDeRangos.some(rango=> rango.backgroundColor === fondo);
+            existe = existeColor && existeFondo;
+            return existe;
+        }
+
+        function evalMinimo(minimo, maximo){
+            error = false;
+            if (minimo > maximo){
+                error=true;
+            }
+            return error;
+        }
+
+
+
+        function hayRepetidos(rango){
+            errores = [];
+            if (yaExiste(rango.contenido)){
+                errores.push("ese rango ya existe");                
+            }
+            if(menorRepetido(rango.left)){
+                errores.push("ese valor de rango mínimo ya existe");
+            }
+            if(mayorRepetido(rango.right)){
+                errores.push("ese valor de rango máximo ya existe");
+            }
+            if(coloresRepetidos(rango.color, rango.backgroundColor)){
+                errores.push("ya existe una combinación de color de letra y fondo similar");
+            }
+            return errores;
+        }
+
+        function addNewRange(idLeyenda, rangoObj){
+
+            //const rangoObj = getRangoObj();
+            
 
             const newDiv = document.createElement('div');
             newDiv.className = 'leyenda';
@@ -224,10 +298,12 @@
 
             newEtiqueta.setAttribute('draggable', true);
             
+            // Se añaden eventos para el borrado
             newEtiqueta.addEventListener('dragstart', inicioArrastre);
             newEtiqueta.addEventListener('dragend', finArrastre);   
 
-            newEtiqueta.textContent = nuevoRango.textContent;
+            //newEtiqueta.textContent = nuevoRango.textContent;
+            newEtiqueta.textContent = rangoObj.contenido;
             newDiv.appendChild(newEtiqueta);
             leyendas.appendChild(newDiv);
 
@@ -239,18 +315,19 @@
 
             leftLimitSymbol = leftLimit.value == "true" ? "(" : "[";   
             rightLimitSymbol = rightLimit.value == "true" ? ")" : "]"; 
-            
+                        
             const rango = {
-                "left":menor.value,
-                "right":mayor.value,
-                "leftOpen":leftLimit.value,
-                "rightOpen":rightLimit.value,
-                "colorName":colorTexto.options[colorTexto.selectedIndex].text,
-                "color":colorTexto.value,
-                "backgroundColorName":colorFondo.options[colorFondo.selectedIndex].text,
-                "backgroundColor":colorFondo.value,
-                "leftSymbol":leftLimitSymbol,
-                "rightSymbol":rightLimitSymbol,
+                "left" : menor.value,
+                "right" : mayor.value,
+                "leftOpen" : leftLimit.value,
+                "rightOpen" : rightLimit.value,
+                "colorName" : colorTexto.options[colorTexto.selectedIndex].text,
+                "color" : colorTexto.value,
+                "backgroundColorName" : colorFondo.options[colorFondo.selectedIndex].text,
+                "backgroundColor": colorFondo.value,
+                "leftSymbol" : leftLimitSymbol,
+                "rightSymbol"   : rightLimitSymbol,
+                "contenido" : leftLimitSymbol + menor.value + ", " + mayor.value + rightLimitSymbol
             };
             return rango
         }
@@ -260,26 +337,113 @@
             return JSON.stringify(rangoJson);
         }
 
-        function addRangoJson(){            
-            //rangoJson = getRangoJson();  
-            
-            listaDeRangos.push(rangoJson);            
-            idLeyenda = listaDeRangos.length-1;
-            addNewRange(idLeyenda)  ;
-            
-            console.log (listaDeRangos);
+        function pintarRangos(){
+            if (listaDeRangos.length>0){
+                leyendas.innerHTML="";
+                listaDeRangos.forEach((leyenda, idLeyenda)=>{
+                    addNewRange(idLeyenda, leyenda);
+                });
+            }
         }
 
+        function addRango(){            
+            
+            rangoObj = getRangoObj();     
+            
+            const regexMuestra = /^(?:\[|\()[0-9]{1,3},\s[0-9]{1,3}(?:\]|\))$/;
+            
+            errores = hayRepetidos(rangoObj);
+            if(evalMinimo(rangoObj.left, rangoObj.right)){
+                errores.push("el valor mínimo debe ser menor o igual al valor máximo");
+            }
+
+            if (errores.length>0){
+                mostrarErrores(errores);
+                return;
+            }                      
+            
+            listaDeRangos.push(rangoObj);     
+            //ordena los rangos de mayor a menor
+            if (listaDeRangos.length>1){
+                listaDeRangos.sort((a, b)=>{
+                    return a.left - b.left
+                });
+            }
+
+            limpiar();
+            pintarRangos();
+
+        }
+
+        function informarGuardado(mensaje){
+            limpiar();
+            const informarDiv = document.getElementById('informar');
+            infDiv = document.createElement('div');
+            infDiv.setAttribute('class', '"alert alert-primary');
+            infDiv.setAttribute('role', 'alert');
+            infDiv.innerText(mensaje);
+            informarDiv.appendChild(infDiv);
+        }
+
+        function limpiarInformacion(){
+            const informarDiv = document.getElementById('informar');
+            informarDiv.innerHTML = "";
+        }
+        
+        function mostrarErrores(errores){            
+            
+            limpiarErrores();
+            const erroresDiv = document.getElementById('errores');
+            errores.forEach(error => {
+                const divError = document.createElement('div');
+                divError.setAttribute('class', 'alert alert-warning mt-4');
+                divError.setAttribute('role', 'alert');
+                divError.innerText = error;
+                erroresDiv.appendChild(divError);                
+            });
+        }
+        
         function update (e){         
 
-            leftLimitValue = leftLimit.value ? "(" : "[";   
-            rightLimitValue = rightLimit.value ? ")" : "]";              
+            limpiarErrores();
+            limpiarInformacion();
 
-            nuevoRango.textContent  = leftLimitValue + menor.value + ", " + mayor.value + rightLimitValue;    
+            leftLimitValue = "[";   
+            rightLimitValue = "]";   
+            
+            if(leftLimit.value=="true"){
+                leftLimitValue = "(";
+            }
+            if(rightLimit.value=="true"){
+                rightLimitValue = ")";
+            }
+
+            const regexMuestra = /^(?:\[|\()[0-9]{1,3},\s[0-9]{1,3}(?:\]|\))$/;
+            
+
+            hoy = new Date();
+            fecha.textContent = hoy.getFullYear() + "-" + hoy.getMonth() + "-" + hoy.getDay() + " " + hoy.getHours() + ":" + hoy.getMinutes();
+
+            const contenido = leftLimitValue + menor.value + ", " + mayor.value + rightLimitValue;
+            nuevoRango.textContent  = contenido;
             nuevoRango.style.backgroundColor = colorFondo.value;
-            nuevoRango.style.color = colorTexto.value;           
+            nuevoRango.style.color = colorTexto.value;   
+                            
+            if(regexMuestra.test(contenido)){
+                agregar.hidden =  false;                      
+            }else{
+                agregar.hidden =  true;                 
+            }
+
+            if (listaDeRangos.length>0){
+                guardar.disabled = false;            
+            }else{
+                guardar.disabled = true;
+            }
 
         } 
+
+        
 
         function asignarEventos(){            
 
@@ -290,7 +454,7 @@
             background.addEventListener('input', update);
             color.addEventListener('input', update);
             
-            agregar.addEventListener('click', addRangoJson);     
+            agregar.addEventListener('click', addRango);     
             
             guardar.addEventListener('click', enviarFormulario);
 
@@ -315,9 +479,7 @@
                 })
                 .catch(error =>{
                     console.error("error al obtener las opciones: " , error);
-                });
-
-                                
+                });                                
         }
         
         function getEmtyRango(){
@@ -378,6 +540,7 @@
                     }
                     rango = getEmtyRango();
                     inicializarCampos(rango);
+                    informarGuardado("el conjuto de rango fue guardado satisfactoriamente");
                     return response.json();    
                 })
                 .then(data => {
@@ -387,6 +550,7 @@
                     console.error("error al enviar", error);
                 });
             });
+            
         }
         
         var value = "";
@@ -415,18 +579,19 @@
         const papelera = document.getElementById('papelera');
         const colorTexto = document.getElementById('colorTexto');        
         const colorFondo = document.getElementById('colorFondo'); 
+        const alertaDiv = document.getElementById('alerta');
 
         const guardar = document.getElementById('guardar');
+
+        hoy = new Date();
+        fecha.textContent = hoy.getFullYear() + "-" + hoy.getMonth() + "-" + hoy.getDay() + " " + hoy.getHours() + ":" + hoy.getMinutes();
         
 
         papelera.addEventListener('dragover', sobrePapelera);
         papelera.addEventListener('drop', soltarEnPapelera);
 
         const forma = document.getElementById('forma');
-        forma.addEventListener('submit', enviarFormulario);
-
-        hoy = new Date();
-        fecha.textContent = hoy.getFullYear() + "-" + hoy.getMonth() + "-" + hoy.getDay() + " " + hoy.getHours() + ":" + hoy.getMinutes();
+        forma.addEventListener('submit', enviarFormulario);        
 
         const listaDeRangos = [];       
         
