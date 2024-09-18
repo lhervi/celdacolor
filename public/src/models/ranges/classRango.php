@@ -51,7 +51,7 @@ class Rango{
     }
 
     function getConfigJson(){
-        $configJson = json_encode($this->getConfig(), JSON_PRETTY_PRINT);
+        $configJson = json_encode($this->getConfig());
         return $configJson;
     }
 

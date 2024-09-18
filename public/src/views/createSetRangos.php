@@ -21,12 +21,12 @@
                 <div class="row g-5">
                     <div class="col-md-4">
                         <label for="rangesName" class="form-label">Nombre del Conjunto de Rangos</label>
-                        <input type="text" name="rangesName" id="rangesName" class="form-control">
+                        <input type="text" name="rangesName" id="rangesName" class="form-control" required>
                     </div>
                         
                     <div class="col-md-4">
                         <label for="createdBy" class="form-label">Creado por</label>
-                        <input type="text" name="createdBy" id="createdBy" class="form-control">
+                        <input type="text" name="createdBy" id="createdBy" class="form-control" required>
                     </div>
                         
                     <div class="col-md-2">
@@ -52,12 +52,12 @@
 
                     <div class="col-md-2">                            
                         <label for="left" class="form-label">Límite inferior</label>
-                        <input type="number" name="left" id="left" class="form-control" min="1" max="999" required>                            
+                        <input type="number" name="left" id="left" class="form-control" min="1" max="999" >                            
                     </div>          
                     
                     <div class="col-md-2">
                         <label for="right" class="form-label">Límite superior</label>
-                        <input type="number" name="right" id="right" class="form-control" min="1" max="999" required>
+                        <input type="number" name="right" id="right" class="form-control" min="1" max="999" >
                     </div>     
                     
                     <div class="col-md-2 form-check">                            
@@ -265,8 +265,7 @@
             }
             return error;
         }
-
-
+       
 
         function hayRepetidos(rango){
             errores = [];
@@ -507,7 +506,7 @@
             nuevoRango.style.background = rangoInfo.background;
             colorTexto.value = rangoInfo.color;
             colorFondo.value =  rangoInfo.background;
-            leyendas.innerHTML = rangoInfo.leyendas;              
+            leyendas.innerHTML = rangoInfo.leyendas;                   
         }
         
         function enviarFormulario(e){
@@ -538,8 +537,9 @@
                         console.error('Error en la solicitud:', response.statusText);
                         return;
                     }
-                    rango = getEmtyRango();
-                    inicializarCampos(rango);
+                    //rango = getEmtyRango();
+                    //inicializarCampos(rango);
+                    location.reload(true);
                     informarGuardado("el conjuto de rango fue guardado satisfactoriamente");
                     return response.json();    
                 })

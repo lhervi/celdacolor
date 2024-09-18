@@ -12,21 +12,27 @@ try {
     }
 
     // Procesar datos
-    $procesador = new ProcesarFormulario();
-    //$procesador->procesarDatos($rangoSetArray);
+    
+    $procesarDatos = ProcesarFormulario::guardarRangosSet($rangoSetArray);
 
-    // Enviar respuesta
-    $headers = array(
-        "HTTP/1.1 200 OK",
-        "Content-Type: application/json",
-        "Cache-Control: no-cache"
-    );
-
-    foreach ($headers as $header) {
-        header($header);
+    if($procesarDatos){
+        $headers = array(
+            "HTTP/1.1 200 OK",
+            "Content-Type: application/json",
+            "Cache-Control: no-cache"
+        );
+    
+        foreach ($headers as $header) {
+            header($header);
+        }
+    
+        echo json_encode(['mensaje' => 'Datos procesados correctamente']);
+    }else{
+        throw new Exception ("los datos no pudieron procesarse");
     }
 
-    echo json_encode(['mensaje' => 'Datos procesados correctamente']);
+    // Enviar respuesta
+    
 } catch (Exception $e) {
     // Manejar el error
     http_response_code(500);
