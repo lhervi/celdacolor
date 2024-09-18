@@ -1,24 +1,4 @@
 [
-    {"rangesName":"semaforo","fechaCreacion":"2\/9\/2024","createdBy":"Lornis","ranges":[
-        {"left":0,"right":35,"leftOpen":false,"rightOpen":true,"colorName":"blanco","color":"#ffffff","backgroundColorName":"rojo","backgroundColor":"#FF0000"},
-        {"left":35,"right":65,"leftOpen":false,"rightOpen":true,"colorName":"negro","color":"#000000","backgroundColorName":"amarillo","backgroundColor":"#ffff00"},
-        {"left":65,"right":100,"leftOpen":false,"rightOpen":false,"colorName":"blanco","color":"#ffffff","backgroundColorName":"verde","backgroundColor":"#00FF00"}]
-    },
-    {"rangesName":"semaforo1","fechaCreacion":"2\/9\/2024","createdBy":"Lornis","ranges":[
-        {"left":0,"right":30,"leftOpen":false,"rightOpen":true,"colorName":"blanco","color":"#ffffff","backgroundColorName":"gris","backgroundColor":"#aab7b8"},
-        {"left":30,"right":65,"leftOpen":false,"rightOpen":true,"colorName":"negro","color":"#000000","backgroundColorName":"naranja","backgroundColor":"#e67e22"},
-        {"left":65,"right":100,"leftOpen":false,"rightOpen":false,"colorName":"blanco","color":"#ffffff","backgroundColorName":"azul","backgroundColor":"#3498db"}]
-    },
-    {"rangesName":"semaforo2","fechaCreacion":"2\/9\/2024","createdBy":"Lornis","ranges":[{"left":0,"right":30,"leftOpen":false,"rightOpen":true,"colorName":"blanco","color":"#ffffff","backgroundColorName":"gris","backgroundColor":"#aab7b8"},
-        {"left":30,"right":65,"leftOpen":false,"rightOpen":true,"colorName":"negro","color":"#000000","backgroundColorName":"naranja","backgroundColor":"#e67e22"},
-        {"left":65,"right":100,"leftOpen":false,"rightOpen":false,"colorName":"blanco","color":"#ffffff","backgroundColorName":"azul","backgroundColor":"#3498db"}]
-    },
-    {"rangesName":"semaforo4","fechaCreacion":"2\/9\/2024","createdBy":"Merli","ranges":[
-        {"left":0,"right":50,"leftOpen":false,"rightOpen":true,"colorName":"blanco","color":"#ffffff","backgroundColorName":"negro","backgroundColor":"#000000"},
-        {"left":50,"right":100,"leftOpen":false,"rightOpen":true,"colorName":"negro","color":"#000000","backgroundColorName":"blanco","backgroundColor":"#ffffff"}]
-    },
-    {"rangesName":"semaforo5","fechaCreacion":"2024-8-2 17:42","createdBy":"Lornis Hervilla","ranges":[
-        {"left":"1","right":"2","leftOpen":"false","rightOpen":"true","colorName":"blanco","color":"#ffffff","backgroundColorName":"Negro","backgroundColor":"#000000","leftSymbol":"[","rightSymbol":")","contenido":"[1, 2)"},
-        {"left":"2","right":"3","leftOpen":"false","rightOpen":"true","colorName":"blanco","color":"#ffffff","backgroundColorName":"Marr\u00f3n oscuro","backgroundColor":"#603311","leftSymbol":"[","rightSymbol":")","contenido":"[2, 3)"}]
-    }
-]
+    {"rangesName":"Semaforo1","fechaCreacion":"2024-8-3 15:29","createdBy":"Lornis Hervilla","ranges":
+        [{"left":"0","right":"5","leftOpen":"false","rightOpen":"true","colorName":"blanco","color":"#ffffff","backgroundColorName":"Rojo","backgroundColor":"#FF0000","leftSymbol":"[","rightSymbol":")","contenido":"[0, 5)"},{"left":"5","right":"10","leftOpen":"false","rightOpen":"false","colorName":"blanco","color":"#ffffff","backgroundColorName":"Azul real","backgroundColor":"#4169E1","leftSymbol":"[","rightSymbol":"]","contenido":"[5, 10]"}]
+        },{"rangesName":"Semaforo2","fechaCreacion":"2024-8-3 15:32","createdBy":"Maria Rivas","ranges":[{"left":"1","right":"10","leftOpen":"false","rightOpen":"true","colorName":"blanco","color":"#ffffff","backgroundColorName":"Rojo","backgroundColor":"#FF0000","leftSymbol":"[","rightSymbol":")","contenido":"[1, 10)"},{"left":"10","right":"15","leftOpen":"false","rightOpen":"true","colorName":"negro","color":"#000000","backgroundColorName":"Naranja","backgroundColor":"#FFA500","leftSymbol":"[","rightSymbol":")","contenido":"[10, 15)"},{"left":"15","right":"20","leftOpen":"false","rightOpen":"true","colorName":"negro","color":"#000000","backgroundColorName":"Azul real","backgroundColor":"#4169E1","leftSymbol":"[","rightSymbol":")","contenido":"[15, 20)"}]}]

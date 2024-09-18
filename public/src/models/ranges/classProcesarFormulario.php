@@ -6,7 +6,7 @@ class ProcesarFormulario{
     private static function getDataFronRangosSet(array $rangosSet): array{
         
         $nuevoRangosSet = [
-            "rangesName"=> $rangosSet['rangosName'], 
+            "rangesName"=> $rangosSet['rangesName'], 
             "fechaCreacion" => $rangosSet['fechaCreacion'],
             "createdBy" => $rangosSet['createdBy'],
             "ranges" => $rangosSet['ranges']
@@ -25,10 +25,14 @@ class ProcesarFormulario{
 
             $file = file_get_contents($fileDir);
             
-            if(!$file){
+            if($file===false){
                 throw new Exception("no es posible acceder al conjunto de rangos");
+            }elseif($file===""){
+                $conjuntoDeRangos = [];
+            }else{
+                $conjuntoDeRangos = json_decode($file, true);
             }
-            $conjuntoDeRangos = json_decode($file, true);
+            
             if(isset($conjuntoDeRangos) && is_array($conjuntoDeRangos)){
                 $nuevoRangoSet = self::getDataFronRangosSet($rangosSet);
                 $conjuntoDeRangos[] = $nuevoRangoSet;
