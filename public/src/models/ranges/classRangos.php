@@ -86,7 +86,7 @@ class Rangos{
         $htmlRangoOpiones="";
         foreach($this->indicesRangos as $ind=>$rangoName){
             //$htmlRangoOpiones = $htmlRangoOpiones . "<option value=$rangoName>$rangoName</option> \n";
-            $htmlRangoOpiones = $htmlRangoOpiones . "<option value=$ind>$rangoName</option> \n";
+            $htmlRangoOpiones = $htmlRangoOpiones . "<option value=$rangoName>$rangoName</option> \n";
         }
         return $htmlRangoOpiones;
     }
