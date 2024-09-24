@@ -30,6 +30,7 @@ class Tabla {
                 $tableParam[$ind] = TABLE_DEFAULT[$ind];                
             }
         }        
+        //$tablaParam = ["rangesName"=>$rangoSeleccionado, "valorMenor"=>0, "valorMayor"=>100, "filas"=>5, "columnas"=>20];
         $this->tableInfo = $tableParam;
         $this->filas = $tableParam['filas'];
         $this->columnas = $tableParam['columnas'];
@@ -37,7 +38,7 @@ class Tabla {
         $this->class = $tableParam['class'];
         $this->valorMenor = $tableParam['valorMenor'];
         $this->valorMayor = $tableParam['valorMayor'];     
-        $this->rangesName = $tableParam['rangesName'];  
+        $this->rangesName = $tableParam['rangesName'];          
     }    
 
     public function setFilas(int $filas){

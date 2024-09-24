@@ -55,8 +55,8 @@ class Rangos{
     }   
 
     function getRangosIndices(): array{        
-        foreach($this->ranges as $range){            
-            $this->indicesRangos[] = $range['rangesName'];            
+        foreach($this->ranges as $ind=>$range){            
+            $this->indicesRangos[$ind] = $range['rangesName'];            
         }
         return $this->indicesRangos;
     }
@@ -65,8 +65,8 @@ class Rangos{
         if (key_exists($indice, $this->indicesRangos)){
             return $this->ranges[$indice];
         }else{
-            $this->ranges[0];
-        }
+            return [];
+        }        
     }
 
     function getRangeIndiceNumber(string $rangoName): int{
@@ -85,7 +85,8 @@ class Rangos{
     function getRangosOptions(): string{
         $htmlRangoOpiones="";
         foreach($this->indicesRangos as $ind=>$rangoName){
-            $htmlRangoOpiones = $htmlRangoOpiones . "<option value=$rangoName>$rangoName</option> \n";
+            //$htmlRangoOpiones = $htmlRangoOpiones . "<option value=$rangoName>$rangoName</option> \n";
+            $htmlRangoOpiones = $htmlRangoOpiones . "<option value=$ind>$rangoName</option> \n";
         }
         return $htmlRangoOpiones;
     }

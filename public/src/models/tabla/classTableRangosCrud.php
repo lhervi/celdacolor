@@ -35,8 +35,8 @@ class TableRangosCrud{
             $color = $range['color'];
             $left =  $range['left'];
             $right =  $range['right'];
-            $limIzq = $range['leftOpen'] ? "(" : "[";
-            $limDer = $range['rightOpen'] ? ")" : "]";
+            $limIzq = $range['leftSymbol'];
+            $limDer = $range['rightSymbol'];
             $colorName = $range['colorName'];            
             $colorBackGroundName = $range['backgroundColorName'];
 

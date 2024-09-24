@@ -126,6 +126,8 @@ function limpiarDespuesDeGuardar(){
     rangesName.focus();
 }
 
+
+
 function hayRepetidos(rango){
     errores = [];
     if (yaExiste(rango.contenido)){
@@ -139,7 +141,7 @@ function hayRepetidos(rango){
     }
     if(coloresRepetidos(rango.color, rango.backgroundColor)){
         errores.push("ya existe una combinación de color de letra y fondo similar");
-    }
+    }    
     return errores;
 }
 
@@ -272,7 +274,12 @@ function mostrarErrores(errores){
 
 function actualizarFecha(){
     hoy = new Date();
-    fecha.textContent = hoy.getFullYear() + "-" + hoy.getMonth() + "-" + hoy.getDay() + " " + hoy.getHours() + ":" + hoy.getMinutes();
+    aaaa = hoy.getFullYear();
+    mm = hoy.getMonth() +1 ;
+    dd = hoy.getDate();
+    hh = hoy.getHours();
+    min = hoy.getMinutes();
+    fecha.innerText = aaaa + "-" + mm + "-" + dd + " " + hh + ":" + min;
 }
 
 function update (e){         
@@ -292,7 +299,7 @@ function update (e){
 
     const regexMuestra = /^(?:\[|\()[0-9]{1,3},\s[0-9]{1,3}(?:\]|\))$/;
     
-
+    actualizarFecha();
     
 
     const contenido = leftLimitValue + menor.value + ", " + mayor.value + rightLimitValue;
@@ -328,6 +335,7 @@ function asignarEventos(){
     color.addEventListener('input', update);
 
     rangesName.addEventListener('input', update);
+    
     createdBy.addEventListener('input', update);
     
     agregar.addEventListener('click', addRango);     
@@ -384,9 +392,10 @@ function inicializarCampos(rangoInfo){
     colorFondo.value =  rangoInfo.background;
     leyendas.innerHTML = rangoInfo.leyendas;                   
 }
-
+ 
 function enviarFormulario(e){
     e.preventDefault();      //nueva linea          
+    actualizarFecha();
     rangoSet = {
         "rangesName":rangesName.value,
         "fechaCreacion":fecha.innerText,
@@ -394,11 +403,16 @@ function enviarFormulario(e){
         "ranges" : listaDeRangos
     };
 
+    const indiceInput = document.getElementById('indice');
+    const indice = indiceInput.value;
+
     rangoSetJson = JSON.stringify(rangoSet);
 
     const formData = new FormData();
 
     formData.append('rangoSet', rangoSetJson);
+    formData.append('indice', indice);
+    
 
     const forma = document.getElementById('forma');
     //forma.addEventListener('submit', (e)=> {
@@ -409,7 +423,7 @@ function enviarFormulario(e){
             body:formData
         })
         .then(response =>{
-            console.log("Código de respuesta:", response.status);
+            
             console.log("Encabezados de respuesta:", response.headers); 
 
             if (!response.ok) {
@@ -435,7 +449,7 @@ function enviarFormulario(e){
 
     var value = "";
 
-    const listaDeRangos = [];  
+         
 
     const selectLetras = document.getElementById('colorTexto');
     initSelectColorFondo();
@@ -463,11 +477,32 @@ function enviarFormulario(e){
     const colorFondo = document.getElementById('colorFondo'); 
     const alertaDiv = document.getElementById('alerta');
     const informarDiv = document.getElementById('informar');
+    
 
     const guardar = document.getElementById('guardar');
 
-    hoy = new Date();
-    fecha.textContent = hoy.getFullYear() + "-" + hoy.getMonth() + "-" + hoy.getDay() + " " + hoy.getHours() + ":" + hoy.getMinutes();
+    actualizarFecha();
+
+    var listaDeRangos
+
+    console.log(leyendas.children.length);
+
+    if(leyendas.children.length > 0){
+        const listaRangos = document.getElementById('listaRangos');
+        listaDeRangos = JSON.parse(listaRangos.value);
+        console.log(listaDeRangos);
+
+        Array.from(leyendas.children).forEach(child =>{
+            child.addEventListener('dragstart', inicioArrastre);
+            child.addEventListener('dragend', finArrastre);   
+        });
+ 
+        a=5;        
+    }else{
+        listaDeRangos = [];
+    }
+
+    
     
 
     papelera.addEventListener('dragover', sobrePapelera);

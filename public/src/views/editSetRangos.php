@@ -7,24 +7,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./../../css/style.css">
-    <title>Crear Conjunto de Rangos</title>
+    <title>Editar Conjunto de Rangos</title>
 </head>
 <body>
+    
     <div class="container mt-3">
-    <?php include __DIR__ . '/components/menu.php'; ?>
-        <div class="formulario">        
-            <div><h1 class="mb-4">Formulario para añadir un conjunto de Rangos</h1></div>
+    <?php 
+        include __DIR__ . '/components/menu.php'; 
+        include __DIR__ . "./../models/ranges/classEditarRangosSet.php";
+        
+        
+        $indice = isset($_GET['indice']) ? intval($_GET['indice']) : -1;
+
+        $rangoSet = EditarRangosSet::getRangoSet($indice);
+        $leyendasHtml = EditarRangosSet::getLeyendasHtml($rangoSet['ranges']);
+        $listaLeyenda = EditarRangosSet::getListaDeLeyenda($indice);
+
+        $a=5;
+    ?>
+        <div class="formulario">
+
+            <input id='listaRangos' type='text' hidden value=' <?php echo $listaLeyenda ?> '>
+
+        
+            <div><h1 class="mb-4">Formulario para editar un conjunto de Rangos</h1></div>
             <br>
+
             <form id="forma" action="./../controllers/procesarFormulario.php" method="POST">
-                <input id="indice" hidden value="-1">
+                <input id="indice" hidden value="<?php echo $indice ?>">
                 <div class="row g-5">
                     <div class="col-md-4">
                         <label for="rangesName" class="form-label">Nombre del Conjunto de Rangos</label>
-                        <input type="text" name="rangesName" id="rangesName" class="form-control" required>
-                    </div>                        
+                        <input type="text" name="rangesName" id="rangesName" class="form-control" required value="<?php echo $rangoSet['rangesName']; ?>">
+                    </div>
+                        
                     <div class="col-md-4">
                         <label for="createdBy" class="form-label">Creado por</label>
-                        <input type="text" name="createdBy" id="createdBy" class="form-control" required>
+                        <input type="text" name="createdBy" id="createdBy" class="form-control" required value="<?php echo $rangoSet['createdBy']; ?>">
                     </div>
                         
                     <div class="col-md-2">
@@ -78,11 +97,7 @@
                             <option value="#000000" style="color:#000000; background-color:#ffffff;">negro</option>
                         </select>
                     </div>  
-
-                    <!--div class="col-md-2">
-                        <label for="etiquetaColorTexto" class="form-label">Nombre del color</label>
-                        <input type="text" id="etiquetaColorTexto" class="form-control">
-                    </div-->
+                    
 
                     <div class="col-md-2">
                         <label for="colorFondo" class="form-label">Color de fondo</label>
@@ -93,11 +108,7 @@
                         </select>
                     </div>  
                     
-                    <!--div class="col-md-2">
-                        <label for="etiquetaColorFondo" class="form-label">Nombre del color</label>
-                        <input type="text" name="etiquetaColorFondo" id="etiquetaColorFondo" class="form-control">
-                    </div-->   
-                    
+                                        
                     <div class="col-md-2">                    
                         <label for="nuevoRango" class="form-label">Nuevo rango</label>
                         <div class="leyenda" name="nuevoRango" id="nuevoRango" style="background-color:#000000; color:#ffffff; width: 80px;"></div>
@@ -126,13 +137,17 @@
         <div class="rangosTitle">
             <span>Rangos</span>
         </div>
-
-        <!-- -----------   L E Y E N D A S    -------------------->
         <div class="leyendas" id="leyendas">
 
-        </div>
-        
-        <!-- fin leyendas -->   
+            <?php echo $leyendasHtml;?>
+            <!--div class="leyenda">
+                <div draggable="true" style="background-color:#000000; color:#ffffff;">[0, 10)</div>
+            </div>
+                        
+            <div class="leyenda">
+                <div draggable="true" style="background-color:#00ff00; color:#ffffff;">[10, 30)</div>
+            </div-->
+        </div><!-- fin leyendas -->   
         
         <!-------------------------------- Papelera --------------------------->
 
@@ -148,7 +163,7 @@
     </div><!-- fin del contenedor-->
     <script src="./../../js/funciones.js">
         
-    
+        
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

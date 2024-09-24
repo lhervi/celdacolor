@@ -1,4 +1,297 @@
-[
-    {"rangesName":"Semaforo1","fechaCreacion":"2024-8-3 15:29","createdBy":"Lornis Hervilla","ranges":
-        [{"left":"0","right":"5","leftOpen":"false","rightOpen":"true","colorName":"blanco","color":"#ffffff","backgroundColorName":"Rojo","backgroundColor":"#FF0000","leftSymbol":"[","rightSymbol":")","contenido":"[0, 5)"},{"left":"5","right":"10","leftOpen":"false","rightOpen":"false","colorName":"blanco","color":"#ffffff","backgroundColorName":"Azul real","backgroundColor":"#4169E1","leftSymbol":"[","rightSymbol":"]","contenido":"[5, 10]"}]
-        },{"rangesName":"Semaforo2","fechaCreacion":"2024-8-3 15:32","createdBy":"Maria Rivas","ranges":[{"left":"1","right":"10","leftOpen":"false","rightOpen":"true","colorName":"blanco","color":"#ffffff","backgroundColorName":"Rojo","backgroundColor":"#FF0000","leftSymbol":"[","rightSymbol":")","contenido":"[1, 10)"},{"left":"10","right":"15","leftOpen":"false","rightOpen":"true","colorName":"negro","color":"#000000","backgroundColorName":"Naranja","backgroundColor":"#FFA500","leftSymbol":"[","rightSymbol":")","contenido":"[10, 15)"},{"left":"15","right":"20","leftOpen":"false","rightOpen":"true","colorName":"negro","color":"#000000","backgroundColorName":"Azul real","backgroundColor":"#4169E1","leftSymbol":"[","rightSymbol":")","contenido":"[15, 20)"}]}]
+{
+    "1727188156": {
+        "rangesName": "Semaforo1",
+        "fechaCreacion": "2024-9-24 10:28",
+        "createdBy": "Lornis Hervilla",
+        "ranges": [
+            {
+                "left": "0",
+                "right": "50",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Azul marino",
+                "backgroundColor": "#000080",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[0, 50)"
+            },
+            {
+                "left": "50",
+                "right": "100",
+                "leftOpen": "false",
+                "rightOpen": "false",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Rojo",
+                "backgroundColor": "#FF0000",
+                "leftSymbol": "[",
+                "rightSymbol": "]",
+                "contenido": "[50, 100]"
+            }
+        ]
+    },
+    "1727188404": {
+        "rangesName": "semaforo2",
+        "fechaCreacion": "2024-9-24 17:50",
+        "createdBy": "Lornis Hervilla",
+        "ranges": [
+            {
+                "left": "0",
+                "right": "10",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "negro",
+                "color": "#000000",
+                "backgroundColorName": "Azul cielo",
+                "backgroundColor": "#87CEEB",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[0, 10)"
+            },
+            {
+                "left": "10",
+                "right": "20",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Azul real",
+                "backgroundColor": "#4169E1",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[10, 20)"
+            },
+            {
+                "left": "20",
+                "right": "30",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Azul marino",
+                "backgroundColor": "#000080",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[20, 30)"
+            },
+            {
+                "left": "30",
+                "right": "40",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "negro",
+                "color": "#000000",
+                "backgroundColorName": "Verde menta",
+                "backgroundColor": "#98FB98",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[30, 40)"
+            },
+            {
+                "left": "40",
+                "right": "50",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Verde bosque",
+                "backgroundColor": "#228B22",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[40, 50)"
+            },
+            {
+                "left": "50",
+                "right": "60",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Verde oliva",
+                "backgroundColor": "#808000",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[50, 60)"
+            },
+            {
+                "left": "60",
+                "right": "70",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Marr\u00f3n oscuro",
+                "backgroundColor": "#603311",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[60, 70)"
+            },
+            {
+                "left": "70",
+                "right": "80",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Marr\u00f3n",
+                "backgroundColor": "#A52A2A",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[70, 80)"
+            },
+            {
+                "left": "80",
+                "right": "90",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Rojo",
+                "backgroundColor": "#FF0000",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[80, 90)"
+            },
+            {
+                "left": "90",
+                "right": "100",
+                "leftOpen": "false",
+                "rightOpen": "false",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "P\u00farpura",
+                "backgroundColor": "#800080",
+                "leftSymbol": "[",
+                "rightSymbol": "]",
+                "contenido": "[90, 100]"
+            }
+        ]
+    },
+    "1727188556": {
+        "rangesName": "semaforo3",
+        "fechaCreacion": "2024-9-24 10:35",
+        "createdBy": "Mar\u00eda Guti\u00e9rrez",
+        "ranges": [
+            {
+                "left": "0",
+                "right": "30",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Verde bosque",
+                "backgroundColor": "#228B22",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[0, 30)"
+            },
+            {
+                "left": "30",
+                "right": "65",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "negro",
+                "color": "#000000",
+                "backgroundColorName": "Amarillo",
+                "backgroundColor": "#FFFF00",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[30, 65)"
+            },
+            {
+                "left": "65",
+                "right": "100",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Rojo",
+                "backgroundColor": "#FF0000",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[65, 100)"
+            }
+        ]
+    },
+    "1727188651": {
+        "rangesName": "semaforo4",
+        "fechaCreacion": "2024-9-24 10:37",
+        "createdBy": "Jorge Luna",
+        "ranges": [
+            {
+                "left": "0",
+                "right": "40",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Rojo",
+                "backgroundColor": "#FF0000",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[0, 40)"
+            },
+            {
+                "left": "40",
+                "right": "70",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "negro",
+                "color": "#000000",
+                "backgroundColorName": "Amarillo",
+                "backgroundColor": "#FFFF00",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[40, 70)"
+            },
+            {
+                "left": "70",
+                "right": "100",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Verde bosque",
+                "backgroundColor": "#228B22",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[70, 100)"
+            }
+        ]
+    },
+    "1727215364": {
+        "rangesName": "semaforo4",
+        "fechaCreacion": "2024-9-24 18:2",
+        "createdBy": "Jorge Luis Borges",
+        "ranges": [
+            {
+                "left": "1",
+                "right": "10",
+                "leftOpen": "false",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Negro",
+                "backgroundColor": "#000000",
+                "leftSymbol": "[",
+                "rightSymbol": ")",
+                "contenido": "[1, 10)"
+            },
+            {
+                "left": "10",
+                "right": "20",
+                "leftOpen": "false",
+                "rightOpen": "false",
+                "colorName": "negro",
+                "color": "#000000",
+                "backgroundColorName": "Violeta",
+                "backgroundColor": "#EE82EE",
+                "leftSymbol": "[",
+                "rightSymbol": "]",
+                "contenido": "[10, 20]"
+            }
+        ]
+    }
+}

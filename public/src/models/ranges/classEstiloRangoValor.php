@@ -21,6 +21,7 @@ class EstiloRangoValor{
 
     private static function getEstiloInfo(array $rangos, $valor): array{
         $styleData = [];
+        
         foreach($rangos['ranges'] as $ind=>$parametros){
             $styleData = self::getRangoDataByValor($parametros, $valor);
             if (count($styleData)>0){
@@ -33,8 +34,12 @@ class EstiloRangoValor{
     private static function getRangoDataByValor(array $parametros, $valor): array{
         
         $styleData = [];
-        if(($parametros['leftOpen'] && $valor > $parametros['left']) || (!$parametros['leftOpen'] && $valor >= $parametros['left'])){
-            if(($parametros['rightOpen'] && $valor < $parametros['right']) || (!$parametros['leftOpen'] && $valor <= $parametros['right'])){
+        $estaEnElRangoMenor = ($parametros['leftOpen']=="true" && $valor > floatval($parametros['left']));
+        $estaEnELRangoMenorIgual = ($parametros['leftOpen']=="false" && $valor >= floatval($parametros['left']));
+        $estaEnElRangoMayor = ($parametros['rightOpen']=="true" && $valor < floatval($parametros['right']));
+        $estaEnElRangoMayorIgual = ($parametros['rightOpen']=="false" && $valor <= floatval($parametros['right']));
+        if($estaEnElRangoMenor || $estaEnELRangoMenorIgual){
+            if($estaEnElRangoMayor || $estaEnElRangoMayorIgual){
                 $styleData = [
                     "background-color" => $parametros['backgroundColor'],
                     "color" => $parametros['color'],
@@ -43,7 +48,7 @@ class EstiloRangoValor{
                     "left" => $parametros['left'],
                     "right" => $parametros['right'],
                     "rightOpen" => $parametros['rightOpen'],
-                    "leftOpen" => $parametros['leftOpen'],
+                    "leftOpen" => $parametros['leftOpen'],                    
                 ];                
             }
         }

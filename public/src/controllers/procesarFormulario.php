@@ -4,6 +4,9 @@ try {
     include_once (__DIR__ . "./../models/ranges/classProcesarFormulario.php");
 
     $rangoSet = $_POST['rangoSet'];
+    $indice = $_POST['indice'];
+
+
     $rangoSetArray = json_decode($rangoSet, true);
 
     // Validar datos
@@ -13,7 +16,7 @@ try {
 
     // Procesar datos
     
-    $procesarDatos = ProcesarFormulario::guardarRangosSet($rangoSetArray);
+    $procesarDatos = ProcesarFormulario::guardarRangosSet($rangoSetArray, $indice);
 
     if($procesarDatos){
         $headers = array(

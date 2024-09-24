@@ -19,6 +19,17 @@
     padding: 15px;
 }
 
+#enviar{
+    margin-top: 14px;
+}
+
+#semaforoActivo {
+    margin-top: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:normal;
+    font-size:large;
+}
+
 .forma{    
     font-family: Helvetica, Arial, sans-serif;
     margin-top: 60px;
@@ -80,6 +91,24 @@
     flex-wrap: wrap;
     margin-top: 10px;
     margin-right:40px;        
+}
+
+.leyendaDeRangos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+}
+
+.leyendaDeRangos div {
+    margin-top: 10px;
+    margin-right:10px;
+    width: 100px;
+    align-content:center;
+    font-size: larger;    
+    display: flex;             /* Cambia esto para los hijos */
+    justify-content: center;   /* Centra el contenido horizontalmente */
+    align-items: center;       /* Centra el contenido verticalmente */
+    height: 40px;     
 }
 
 .leyenda {
