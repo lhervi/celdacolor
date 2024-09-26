@@ -92,6 +92,38 @@ function yaExiste(contenido){
     return existe;
 }
 
+/* --------  NOMBRE REPETIDO  ------  */
+
+async function nombreRepetido(nombreRango){
+    const url = "http://localhost/celdacolor/public/src/controllers/validaNombreRepetido.php";
+    //data = {"nombre":nombreRango};
+
+    const formData = new FormData();
+    formData.append('nombre', nombreRango);
+
+    return fetch(url, {
+        method: 'POST',        
+        body: formData
+    })
+    .then(resultado => {
+        if(!resultado.ok){
+            throw new Error('hay problemas para acceder a los datos');
+        }
+        console.log(resultado);
+        return resultado.json();
+    })
+    .then(data => {
+        console.log(data);
+        console.log('resultado:', data.repetido);
+        return data.repetido; 
+    })
+    .catch(error =>{
+        console.error('Error:', error);
+    });
+}
+
+/* --------  NOMBRE REPETIDO  ------  */
+
 function menorRepetido(menor){            
     existe = listaDeRangos.some(rango=> rango.left === menor);
     return existe;
@@ -126,13 +158,13 @@ function limpiarDespuesDeGuardar(){
     rangesName.focus();
 }
 
+async function hayRepetidos(rango){
+    
+    let errores = [];
 
-
-function hayRepetidos(rango){
-    errores = [];
     if (yaExiste(rango.contenido)){
         errores.push("ese rango ya existe");                
-    }
+    }    
     if(menorRepetido(rango.left)){
         errores.push("ese valor de rango mínimo ya existe");
     }
@@ -142,6 +174,15 @@ function hayRepetidos(rango){
     if(coloresRepetidos(rango.color, rango.backgroundColor)){
         errores.push("ya existe una combinación de color de letra y fondo similar");
     }    
+    /* -------------------------- nombre del conjunto de rangos -----------------------------*/
+    const repetido = await nombreRepetido(rangesName.value);
+    if(repetido){
+        errores.push("el nombre del conjunto del rango ya existe");
+    }
+     
+    
+    /* -------------------------- nombre del conjunto de rangos -----------------------------*/
+
     return errores;
 }
 
@@ -212,33 +253,43 @@ function addRango(){
     
     const regexMuestra = /^(?:\[|\()[0-9]{1,3},\s[0-9]{1,3}(?:\]|\))$/;
     
-    errores = hayRepetidos(rangoObj);
-    if(evalMinimo(rangoObj.left, rangoObj.right)){
-        errores.push("el valor mínimo debe ser menor o igual al valor máximo");
-    }
+    //errores = hayRepetidos(rangoObj);
 
-    if (errores.length>0){  
-        mostrarErrores(errores);
-        return;
-    }                      
+    hayRepetidos(rangoObj)
+    .then(errores =>{
+        if(evalMinimo(rangoObj.left, rangoObj.right)){
+            errores.push("el valor mínimo debe ser menor o igual al valor máximo");
+        }
+        if (errores.length>0){  
+            mostrarErrores(errores);
+            return;
+        }                      
+        
+        listaDeRangos.push(rangoObj);     
     
-    listaDeRangos.push(rangoObj);     
+        if (listaDeRangos.length>0){
+            guardar.disabled = false;            
+        }else{
+            guardar.disabled = true;
+        }
+    
+        //ordena los rangos de mayor a menor
+        if (listaDeRangos.length>1){
+            listaDeRangos.sort((a, b)=>{
+                return a.left - b.left
+            });
+        }
+        limpiar();
+        pintarRangos();
+    });
 
-    if (listaDeRangos.length>0){
-        guardar.disabled = false;            
-    }else{
-        guardar.disabled = true;
-    }
 
-    //ordena los rangos de mayor a menor
-    if (listaDeRangos.length>1){
-        listaDeRangos.sort((a, b)=>{
-            return a.left - b.left
-        });
-    }
 
-    limpiar();
-    pintarRangos();
+    
+
+    
+
+    
 
 }
 

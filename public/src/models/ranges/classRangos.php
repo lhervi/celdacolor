@@ -69,6 +69,28 @@ class Rangos{
         }        
     }
 
+    /* -------------------------- Nombres de Rangos ----------------------------- */
+    function getNamesRanges():array{
+        $listaDeNombresDeRangos = [];
+        foreach($this->ranges as $ind=>$range){
+            $listaDeNombresDeRangos[] = strtolower($range['rangesName']);
+        }        
+        return $listaDeNombresDeRangos;
+    }
+
+    function elNombreEstaRepetido(string $nombre):bool{
+        
+        $listaDeNombres = $this->getNamesRanges();
+
+        $repetido = in_array(strtolower($nombre), $listaDeNombres);
+        
+        return $repetido;
+    }
+
+
+    /* -------------------------- Nombres de Rangos ----------------------------- */
+
+
     function getRangeIndiceNumber(string $rangoName): int{
         $pos =0;
         if (in_array($rangoName, $this->indicesRangos)){
@@ -95,12 +117,14 @@ class Rangos{
 }
 
 
-    //------ Solo para pruebas de esta clase
+        //------ Solo para pruebas de esta clase
 
     /*
 
+        $nombreRango = "semaforo1";
         $objRangos = new Rangos();
-        $opt = $objRangos->getRangosOptions();
+        $listaNombres = $objRangos->getNamesRanges();
+        $repetido = $objRangos->elNombreEstaRepetido($nombreRango);
 
         //$rangosArray = $objRangos->getRangos();
         //$rangosIndices = $objRangos->getRangosIndices();
@@ -113,4 +137,3 @@ class Rangos{
 
     */
 
-?>

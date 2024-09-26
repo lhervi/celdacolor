@@ -262,7 +262,7 @@
         ]
     },
     "1727215364": {
-        "rangesName": "semaforo4",
+        "rangesName": "semaforo5",
         "fechaCreacion": "2024-9-24 18:2",
         "createdBy": "Jorge Luis Borges",
         "ranges": [
@@ -291,6 +291,26 @@
                 "leftSymbol": "[",
                 "rightSymbol": "]",
                 "contenido": "[10, 20]"
+            }
+        ]
+    },
+    "1727279984": {
+        "rangesName": "Semaforo6",
+        "fechaCreacion": "2024-9-25 11:59",
+        "createdBy": "Lornis",
+        "ranges": [
+            {
+                "left": "1",
+                "right": "2",
+                "leftOpen": "true",
+                "rightOpen": "true",
+                "colorName": "blanco",
+                "color": "#ffffff",
+                "backgroundColorName": "Negro",
+                "backgroundColor": "#000000",
+                "leftSymbol": "(",
+                "rightSymbol": ")",
+                "contenido": "(1, 2)"
             }
         ]
     }
