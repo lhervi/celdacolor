@@ -46,8 +46,6 @@ cd celdacolor
 
 Abre tu navegador y dirígete a http://localhost/celdacolor (o la ruta que corresponda según tu configuración).
 
-Abre tu navegador y dirígete a http://localhost/celdacolor (o la ruta que corresponda según tu configuración).
-
 ## Uso
 1. Selecciona un color utilizando la paleta de colores proporcionada.
 2. El código hexadecimal del color seleccionado se mostrará en la pantalla.
