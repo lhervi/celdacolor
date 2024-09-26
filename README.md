@@ -40,6 +40,7 @@ Si te interesa utilizar la lógica empleada en esta aplicación, revisa las clas
 2. **Navega al directorio del proyecto**:
  ```bash
 cd celdacolor
+```
 
 3. Configura un servidor web: Puedes usar un servidor local como XAMPP, MAMP o cualquier servidor que soporte PHP.
 

@@ -6,8 +6,13 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Configura el contenedor de dependencias
-$container = new \DI\Container();
+// Importa el namespace DI
+use DI\Container;
+
+// Crea el contenedor de dependencias
+$container = new Container(); // Aquí debería funcionar ahora
+
+// Crea la aplicación Slim pasando el contenedor
 $app = new \Slim\App($container);
 
 // Define una ruta simple
