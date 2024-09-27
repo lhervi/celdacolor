@@ -10,12 +10,12 @@
 <body>
 <div class="container  mt-3">
     <?php 
-        include_once __DIR__ . "./../models/tabla/classTableRangosCrud.php"; 
-        include __DIR__ . '/components/menu.php'; 
+        include_once __DIR__ . "/../models/tabla/classTableRangosCrud.php"; 
+        include __DIR__ . '/components/menu.php';         
     ?>    
     <div class="container">
         <div class="forma" >            
-            <form action="http://localhost/celdacolor/public/src/views/editSetRangos.php" method="GET" id="forma">
+            <form action="./editSetRangos.php" method="GET" id="forma">
                     <input type="text" id="inputHidden" hidden name="indice">
                     <?php echo TableRangosCrud::getTableRangos(); ?>
             </form>
@@ -42,7 +42,7 @@
             }
 
             posicion = e.target.getAttribute('pos');
-            url ="http://localhost/celdacolor/public/src/controllers/borrarRangosSet.php?indice=" + posicion;
+            url ="./../controllers/borrarRangosSet.php?indice=" + posicion;
 
             fetch(url)
                 .then(result => result.json())
@@ -53,9 +53,8 @@
                 });
         }
 
-        function addFunction(e){
-            //window.location.href = "http://localhost/celdacolor/public/src/views/createSetRangos.php";
-            window.open('http://localhost/celdacolor/public/src/views/createSetRangos.php', '_blank');
+        function addFunction(e){            
+            window.open('./createSetRangos.php', '_blank');
         }
 
         function editFunction(e){    
@@ -65,8 +64,7 @@
             const forma = document.getElementById('forma');
             if(indice.value){
                 forma.submit();
-            }            
-            //alert("los cambios fueron enviados");
+            }                        
         }
 
         function asignarEventos(){

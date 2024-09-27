@@ -1,8 +1,8 @@
 {
     "1727188156": {
         "rangesName": "Semaforo1",
-        "fechaCreacion": "2024-9-24 10:28",
-        "createdBy": "Lornis Hervilla",
+        "fechaCreacion": "2024-9-26 18:16",
+        "createdBy": "Lornis",
         "ranges": [
             {
                 "left": "0",
@@ -294,23 +294,23 @@
             }
         ]
     },
-    "1727279984": {
-        "rangesName": "Semaforo6",
-        "fechaCreacion": "2024-9-25 11:59",
-        "createdBy": "Lornis",
+    "1727389554": {
+        "rangesName": "semaforo7",
+        "fechaCreacion": "2024-9-26 18:27",
+        "createdBy": "Jorge",
         "ranges": [
             {
                 "left": "1",
                 "right": "2",
-                "leftOpen": "true",
-                "rightOpen": "true",
+                "leftOpen": "false",
+                "rightOpen": "false",
                 "colorName": "blanco",
                 "color": "#ffffff",
                 "backgroundColorName": "Negro",
                 "backgroundColor": "#000000",
-                "leftSymbol": "(",
-                "rightSymbol": ")",
-                "contenido": "(1, 2)"
+                "leftSymbol": "[",
+                "rightSymbol": "]",
+                "contenido": "[1, 2]"
             }
         ]
     }
